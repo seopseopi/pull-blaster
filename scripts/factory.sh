@@ -5,7 +5,9 @@
 set -uo pipefail
 count=${1:?count}; delay=${2:-3}
 cd "$(dirname "$0")/.."
-trailer=$'\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>'
+nl=$'\n'
+coauthor=${COAUTHOR:-"dfsdfsgsdfg <87164211+dfsdfsgsdfg@users.noreply.github.com>"}
+trailer="${nl}${nl}Co-authored-by: ${coauthor}${nl}Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 body=$'Automated PR from the achievements factory.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)'
 mkdir -p log
 
